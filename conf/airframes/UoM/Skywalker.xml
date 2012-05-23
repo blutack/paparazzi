@@ -1,14 +1,14 @@
 <!DOCTYPE airframe SYSTEM "../airframe.dtd">
 
 <!-- 
-	HobbyKing Mini-Swift
+	BevRC Skywalker
 	Umarim
 	Transparent Xbees
  -->
 
-<airframe name="MiniSwift">
+<airframe name="Skywalker">
   <description>
-	<model name="Mini Swift" manufacturer="HobbyKing" type="fixed-wing" />
+	<model name="Skywalker" manufacturer="BevRC" type="fixed-wing" />
 	<image src="http://www.hobbyking.com/hobbyking/store/catalog/Mini-Swift.jpg" />
 	<author name="Dr Jones" email="foo@bar.com" />
 	<notes>
