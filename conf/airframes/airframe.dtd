@@ -1,6 +1,6 @@
 <!-- Paparazzi airframe DTD -->
 
-<!ELEMENT airframe (include|servos|commands|csc_boards|rc_commands|auto_rc_commands|ap_only_commands|command_laws|section|makefile|modules|firmware)*>
+<!ELEMENT airframe (include|servos|commands|csc_boards|rc_commands|auto_rc_commands|ap_only_commands|command_laws|section|makefile|modules|firmware|description)*>
 <!ELEMENT include EMPTY>
 <!ELEMENT servos (servo)*>
 <!ELEMENT commands (axis)*>
@@ -27,6 +27,13 @@
 <!ELEMENT firmware (target|subsystem|configure|define)*>
 <!ELEMENT target (subsystem|configure|define)*>
 <!ELEMENT subsystem (configure|define)*>
+
+<!ELEMENT description (model|image|author|notes)*>
+
+<!ELEMENT model EMPTY>
+<!ELEMENT image EMPTY>
+<!ELEMENT author EMPTY>
+<!ELEMENT notes (#PCDATA)>
 
 <!ATTLIST include
 href CDATA #REQUIRED>
@@ -122,3 +129,15 @@ target CDATA #IMPLIED>
 <!ATTLIST load
 name CDATA #REQUIRED
 target CDATA #IMPLIED>
+
+<!ATTLIST model
+name CDATA #REQUIRED
+manufacturer CDATA #REQUIRED
+type CDATA #REQUIRED>
+
+<!ATTLIST image
+href CDATA #REQUIRED>
+
+<!ATTLIST author
+name CDATA #REQUIRED
+email CDATA #REQUIRED>
