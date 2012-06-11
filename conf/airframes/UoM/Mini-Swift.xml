@@ -9,12 +9,10 @@
 <airframe name="MiniSwift">
   <description>
 	<model name="Mini Swift" manufacturer="HobbyKing" type="fixed-wing" />
-	<image src="http://www.hobbyking.com/hobbyking/store/catalog/Mini-Swift.jpg" />
+	<image href="http://www.hobbyking.com/hobbyking/store/catalog/Mini-Swift.jpg" />
 	<author name="Dr Jones" email="foo@bar.com" />
 	<notes>
-	<![CDATA[
-    	Made with EPO, this small glider is both agile and very resliant to crashes.
-  	]]>
+    		Made with EPO, this small glider is both agile and very resliant to crashes.
 	</notes>
   </description>
 
