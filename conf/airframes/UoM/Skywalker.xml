@@ -9,18 +9,17 @@
 <airframe name="Skywalker">
   <description>
 	<model name="Skywalker" manufacturer="BevRC" type="fixed-wing" />
-	<image src="http://www.hobbyking.com/hobbyking/store/catalog/Mini-Swift.jpg" />
+	<image href="http://www.hobbyking.com/hobbyking/store/catalog/Mini-Swift.jpg" />
 	<author name="Dr Jones" email="foo@bar.com" />
 	<notes>
-	<![CDATA[
     	Made with EPO, this small glider is both agile and very resliant to crashes.
-  	]]>
 	</notes>
   </description>
 
   <modules>
     <load name="gps_ubx_ucenter.xml" />
-    <load name="baro_board.xml"/>
+    <load name="baro_board.xml" />
+    <load name="digital_cam.xml" />
   </modules>
 
   <firmware name="fixedwing">
@@ -144,15 +143,18 @@
   </section>
 
   <section name="MISC">
-    <define name="MINIMUM_AIRSPEED" value="13." unit="m/s"/>
-    <define name="NOMINAL_AIRSPEED" value="16." unit="m/s"/>
-    <define name="MAXIMUM_AIRSPEED" value="24." unit="m/s"/>
+    <define name="MINIMUM_AIRSPEED" value="5." unit="m/s"/>
+    <define name="NOMINAL_AIRSPEED" value="10." unit="m/s"/>
+    <define name="MAXIMUM_AIRSPEED" value="20." unit="m/s"/>
     <define name="CARROT" value="5." unit="s"/>
     <define name="KILL_MODE_DISTANCE" value="(1.5*MAX_DIST_FROM_HOME)"/>
     <define name="ALT_KALMAN_ENABLED" value="TRUE"/>
     <define name="DEFAULT_CIRCLE_RADIUS" value="80."/>
     <define name="UNLOCKED_HOME_MODE" value="TRUE"/>
     <define name="TELEMETRY_MODE_AP" value="1"/>
+    <define name="DC_SHUTTER_LED" value="6"/>
+    <define name="DC_AUTOSHOOT_QUARTERSEC_PERIOD" value="10"/>
+    <define name="LED_6_BANK" value="0"/>
   </section>
 
   <section name="VERTICAL CONTROL" prefix="V_CTL_">
@@ -185,7 +187,7 @@
   </section>
 
   <section name="HORIZONTAL CONTROL" prefix="H_CTL_">
-    <define name="COURSE_PGAIN" value="0.9"/>
+    <define name="COURSE_PGAIN" value="0.3"/>
 
     <define name="ROLL_MAX_SETPOINT" value="0.805000007153" unit="rad"/>
     <define name="PITCH_MAX_SETPOINT" value="0.5" unit="rad"/>
