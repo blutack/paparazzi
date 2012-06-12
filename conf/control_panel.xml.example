@@ -74,6 +74,8 @@
       <arg flag="-b" variable="ivy_bus"/>
       <arg flag="-d" constant="/dev/ttyUSB1"/>
     </program>
+
+    <program name="Antenna Tracker" command="sw/ground_segment/cockpit/ant_track_pmm --id=1" />
  </section>
 
 
