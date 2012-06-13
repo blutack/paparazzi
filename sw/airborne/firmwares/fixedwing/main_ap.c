@@ -282,7 +282,7 @@ static inline uint8_t pprz_mode_update( void ) {
       || TRUE
 #endif
       ) {
-    return ModeUpdate(pprz_mode, PPRZ_MODE_OF_PULSE(fbw_state->channels[RADIO_MODE]));
+    return ModeUpdate(pprz_mode, autopilot_process_radio_control());
   } else
     return FALSE;
 }

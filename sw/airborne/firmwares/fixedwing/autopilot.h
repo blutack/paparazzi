@@ -49,8 +49,8 @@
 #define  PPRZ_MODE_NB 5
 
 #define PPRZ_MODE_OF_PULSE(pprz) \
-  (pprz > TRESHOLD2 ? PPRZ_MODE_AUTO2 : \
-        (pprz > TRESHOLD1 ? PPRZ_MODE_AUTO1 : PPRZ_MODE_MANUAL))
+		(pprz > TRESHOLD2 ? PPRZ_MODE_AUTO2 : \
+		      (pprz > TRESHOLD1 ? PPRZ_MODE_AUTO1 : PPRZ_MODE_MANUAL))
 
 extern uint8_t pprz_mode;
 extern bool_t kill_throttle;
@@ -90,17 +90,17 @@ extern bool_t sum_err_reset;
 
 #ifdef RADIO_CONTROL
 #include "subsystems/radio_control.h"
-static inline void autopilot_process_radio_control ( void ) {
+static inline int autopilot_process_radio_control ( void ) {
   //pprz_mode = PPRZ_MODE_OF_PULSE(radio_control.values[RADIO_MODE]);
 	#pragma message "WARNING! USING UNTESTED DOUBLE SWITCH MODE CONTROL"
 	if ((radio_control.values[RADIO_MODE] < TRESHOLD1) && (radio_control.values[RADIO_GAIN1] < TRESHOLD1)) {
-		pprz_mode = PPRZ_MODE_MANUAL;
+		return PPRZ_MODE_MANUAL;
 	} else if ((radio_control.values[RADIO_MODE] > TRESHOLD2) && (radio_control.values[RADIO_GAIN1] < TRESHOLD1)) {
-		pprz_mode = PPRZ_MODE_AUTO1;
+		return PPRZ_MODE_AUTO1;
 	} else if ((radio_control.values[RADIO_GAIN1] > TRESHOLD2) && (radio_control.values[RADIO_MODE] < TRESHOLD1)) {
-		pprz_mode = PPRZ_MODE_AUTO2;
+		return PPRZ_MODE_AUTO2;
 	} else {
-		pprz_mode = PPRZ_MODE_MANUAL;
+		return PPRZ_MODE_MANUAL;
 	}
 }
 #endif
