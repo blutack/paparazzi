@@ -91,7 +91,17 @@ extern bool_t sum_err_reset;
 #ifdef RADIO_CONTROL
 #include "subsystems/radio_control.h"
 static inline void autopilot_process_radio_control ( void ) {
-  pprz_mode = PPRZ_MODE_OF_PULSE(radio_control.values[RADIO_MODE]);
+  //pprz_mode = PPRZ_MODE_OF_PULSE(radio_control.values[RADIO_MODE]);
+	#pragma message "WARNING! USING UNTESTED DOUBLE SWITCH MODE CONTROL"
+	if((radio_control.values[RADIO_MODE] < TRESHOLD1) && (radio_control.values[RADIO_GAIN1] < TRESHOLD1)) {
+		pprz_mode = PPRZ_MODE_MANUAL;
+	} else if(radio_control.values[RADIO_MODE] > TRESHOLD2) {
+		pprz_mode = PPRZ_MODE_AUTO1;
+	} else if(radio_control.values[RADIO_GAIN1] > TRESHOLD2) {
+		pprz_mode = PPRZ_MODE_AUTO2;
+	} else {
+		pprz_mode = PPRZ_MODE_MANUAL;
+	}
 }
 #endif
 
