@@ -17,7 +17,7 @@
   </description>
 
   <modules>
-    <load name="gps_ubx_ucenter.xml" />
+    <load name="gps_ubx_ucenter.xml" />	
     <load name="baro_board.xml" />
     <!--<load name="digital_cam.xml" /> -->
   </modules>
@@ -34,8 +34,6 @@
       <define name="USE_I2C0"/>
       <define name="USE_I2C1"/>
     </target>
-    <target name="tunnel" board="umarim_1.0" />
-    <target name="usb_tunnel_0" board="umarim_1.0" />
 
     <subsystem name="radio_control" type="ppm"/>
 
@@ -43,7 +41,7 @@
     <!--<subsystem name="telemetry" type="transparent">
       <configure name="MODEM_BAUD" value="B57600"/>
     </subsystem>-->
-<subsystem name="telemetry" type="transparent_usb"/>
+		<subsystem name="telemetry" type="transparent_usb"/>
 
 
     <!-- Actuators are automatically chosen according to board-->
@@ -56,9 +54,8 @@
     <!-- Sensors -->
     <subsystem name="gps" type="ublox"/>
 
-    <subsystem name="current_sensor">
-      <configure name="ADC_CURRENT_SENSOR" value="ADC_0"/>
-    </subsystem>
+		<define name="USE_ADC"/>
+   	<define name="USE_ADC_3"/> 
 
 		<configure name="AHRS_ALIGNER_LED" value="1"/>
     <configure name="GPS_LED" value="2"/>
@@ -68,7 +65,7 @@
   <!-- commands section -->
   <servos>
     <servo name="MOTOR" no="2" min="1000" neutral="1000" max="2000"/>
-    <servo name="AILERON" no="0" min="2000" neutral="1500" max="1000"/>
+    <servo name="AILERON" no="0" min="1000" neutral="1500" max="2000"/>
     <servo name="ELEVATOR" no="1" min="1800" neutral="1500" max="1200"/>
     <servo name="RUDDER" no="6" min="1000" neutral="1500" max="2000"/>
   </servos>
@@ -142,9 +139,9 @@
   </section>
 
   <section name="BAT">
-    <define name="MILLIAMP_AT_FULL_THROTTLE" value="2000"/>
+		<define name="ADC_CHANNEL_CURRENT" value="ADC_3" />
+ 		<define name="MilliAmpereOfAdc(adc)" value="(adc-155)*19.34"/>
     <define name="CATASTROPHIC_BAT_LEVEL" value="9.3" unit="V"/>
-    <define name="MilliAmpereOfAdc(_adc)" value="(_adc-162)*17.4"/>
   </section>
 
   <section name="MISC">
