@@ -1,7 +1,7 @@
 <!DOCTYPE flight_plan SYSTEM "../flight_plan.dtd">
 
 <flight_plan alt="75" ground_alt="0" lat0="-0.493176" lon0="-77.302871" max_dist_from_home="3000" name="Basic" security_height="25">
-  <header>
+  <!--<header>
 #include "subsystems/navigation/nav_line.h"
 #include "subsystems/datalink/datalink.h"
 
@@ -16,7 +16,7 @@
  
 #endif
 
-</header>
+</header>-->
   <waypoints>
     <waypoint name="HOME" x="0" y="0"/>
     <waypoint name="STDBY" x="49.5" y="100.1"/>
