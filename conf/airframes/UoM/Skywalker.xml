@@ -19,7 +19,7 @@
   <modules>
     <load name="gps_ubx_ucenter.xml" />
     <load name="baro_board.xml" />
-    <load name="digital_cam.xml" />
+    <!--<load name="digital_cam.xml" /> -->
   </modules>
 
   <firmware name="fixedwing">
@@ -40,9 +40,10 @@
     <subsystem name="radio_control" type="ppm"/>
 
     <!-- Communication -->
-    <subsystem name="telemetry" type="transparent">
+    <!--<subsystem name="telemetry" type="transparent">
       <configure name="MODEM_BAUD" value="B57600"/>
-    </subsystem>
+    </subsystem>-->
+<subsystem name="telemetry" type="transparent_usb"/>
 
 
     <!-- Actuators are automatically chosen according to board-->
@@ -58,6 +59,10 @@
     <subsystem name="current_sensor">
       <configure name="ADC_CURRENT_SENSOR" value="ADC_0"/>
     </subsystem>
+
+		<configure name="AHRS_ALIGNER_LED" value="1"/>
+    <configure name="GPS_LED" value="2"/>
+
   </firmware>
 
   <!-- commands section -->
@@ -152,9 +157,6 @@
     <define name="DEFAULT_CIRCLE_RADIUS" value="80."/>
     <define name="UNLOCKED_HOME_MODE" value="TRUE"/>
     <define name="TELEMETRY_MODE_AP" value="1"/>
-    <define name="DC_SHUTTER_LED" value="6"/>
-    <define name="DC_AUTOSHOOT_QUARTERSEC_PERIOD" value="10"/>
-    <define name="LED_6_BANK" value="0"/>
   </section>
 
   <section name="VERTICAL CONTROL" prefix="V_CTL_">
