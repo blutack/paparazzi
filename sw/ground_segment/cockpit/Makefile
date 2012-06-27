@@ -47,7 +47,7 @@ MAIN=gcs
 CMO=$(ML:.ml=.cmo)
 CMX=$(ML:.ml=.cmx)
 
-all : $(MAIN)
+all : $(MAIN) 
 
 opt : $(MAIN).opt
 
