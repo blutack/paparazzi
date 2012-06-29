@@ -1,0 +1,86 @@
+<!DOCTYPE airframe SYSTEM "../airframe.dtd">
+
+<!-- 
+	BevRC Skywalker
+	Umarim
+	Transparent Xbees
+ -->
+
+<airframe name="Skywalker_Biker">
+  <description>
+	<model name="Skywalker" manufacturer="BevRC" type="fixed-wing" />
+	<image href="http://www.hobbyking.com/hobbyking/store/catalog/Mini-Swift.jpg" />
+	<author name="Dr Jones" email="foo@bar.com" />
+	<notes>
+    	Made with EPO, this small glider is both agile and very resliant to crashes.
+	</notes>
+  </description>
+
+<include href="conf/airframes/UoM/Skywalker.xml" />
+
+<section name="VERTICAL CONTROL" prefix="V_CTL_">
+
+    <!-- define name="POWER_CTL_BAT_NOMINAL" value="11.1" unit="volt"/ -->
+    <!-- outer loop proportional gain -->
+    <define name="ALTITUDE_PGAIN" value="0.04"/>
+    <!-- outer loop saturation -->
+    <define name="ALTITUDE_MAX_CLIMB" value="2."/>
+
+    <!-- auto throttle inner loop -->
+    <define name="AUTO_THROTTLE_NOMINAL_CRUISE_THROTTLE" value="0.5"/>
+    <define name="AUTO_THROTTLE_MIN_CRUISE_THROTTLE" value="0.25"/>
+    <define name="AUTO_THROTTLE_MAX_CRUISE_THROTTLE" value="0.80"/>
+    <define name="AUTO_THROTTLE_LOITER_TRIM" value="1500"/>
+    <define name="AUTO_THROTTLE_DASH_TRIM" value="-2500"/>
+    <define name="AUTO_THROTTLE_CLIMB_THROTTLE_INCREMENT" value="0.05" unit="%/(m/s)"/>
+    <define name="AUTO_THROTTLE_PGAIN" value="0.007"/>
+    <define name="AUTO_THROTTLE_IGAIN" value="0.067"/>
+    <define name="AUTO_THROTTLE_PITCH_OF_VZ_PGAIN" value="0.11"/>
+
+    <!-- auto pitch inner loop -->
+    <define name="AUTO_PITCH_PGAIN" value="0.05"/>
+    <define name="AUTO_PITCH_IGAIN" value="0.075"/>
+    <define name="AUTO_PITCH_MAX_PITCH" value="0.35"/>
+    <define name="AUTO_PITCH_MIN_PITCH" value="-0.35"/>
+
+   <define name="THROTTLE_SLEW" value="0.5"/>
+
+  </section>
+
+  <section name="HORIZONTAL CONTROL" prefix="H_CTL_">
+    <define name="COURSE_PGAIN" value="0.3"/>
+
+    <define name="ROLL_MAX_SETPOINT" value="0.805000007153" unit="rad"/>
+    <define name="PITCH_MAX_SETPOINT" value="0.5" unit="rad"/>
+    <define name="PITCH_MIN_SETPOINT" value="-0.5" unit="rad"/>
+
+    <define name="PITCH_PGAIN" value="14255.3193359"/>
+    <define name="PITCH_DGAIN" value="1.5"/>
+
+    <define name="ELEVATOR_OF_ROLL" value="2000."/>
+
+    <define name="ROLL_ATTITUDE_GAIN" value="2600"/>
+    <define name="ROLL_RATE_GAIN" value="850"/>
+
+    <define name="ROLL_KFF" value="-500"/>
+    <define name="ROLL_IGAIN" value="00"/>
+    <define name="PITCH_IGAIN" value="500"/>
+  </section>
+
+  <section name="NAV">
+    <define name="NAV_PITCH" value="0."/>
+    <define name="NAV_GLIDE_PITCH_TRIM" value="0"/>
+  </section>
+
+  <section name="AGGRESSIVE" prefix="AGR_">
+    <define name="BLEND_START" value="20"/><!-- Altitude Error to Initiate Aggressive Climb CANNOT BE ZERO!!-->
+    <define name="BLEND_END" value="10"/><!-- Altitude Error to Blend Aggressive to Regular Climb Modes  CANNOT BE ZERO!!-->
+    <define name="CLIMB_THROTTLE" value="0.75"/><!-- Gaz for Aggressive Climb -->
+    <define name="CLIMB_PITCH" value="0.20"/><!-- Pitch for Aggressive Climb -->
+    <define name="DESCENT_THROTTLE" value="0.1"/><!-- Gaz for Aggressive Decent -->
+    <define name="DESCENT_PITCH" value="-0.15"/><!-- Pitch for Aggressive Decent -->
+    <define name="CLIMB_NAV_RATIO" value="0.8"/><!-- Percent Navigation for Altitude Error Equal to Start Altitude -->
+    <define name="DESCENT_NAV_RATIO" value="1.0"/>
+    </section>
+
+</airframe>
