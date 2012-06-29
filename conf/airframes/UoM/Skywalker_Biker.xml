@@ -9,14 +9,24 @@
 <airframe name="Skywalker_Biker">
   <description>
 	<model name="Skywalker" manufacturer="BevRC" type="fixed-wing" />
-	<image href="http://www.hobbyking.com/hobbyking/store/catalog/Mini-Swift.jpg" />
-	<author name="Dr Jones" email="foo@bar.com" />
+	<image href="http://www.hobbyking.com/hobbyking/store/catalog/SKYWALKER.jpg" />
+	<author name="Gareth R" email="foo@bar.com" />
 	<notes>
-    	Made with EPO, this small glider is both agile and very resliant to crashes.
+    	 The Skywalker is a large, cheap, tough EPO FPV platform kit.
 	</notes>
   </description>
 
-<include href="conf/airframes/UoM/Skywalker.xml" />
+<include href="conf/airframes/UoM/sections/Skywalker_Firmware.xml" />
+<include href="conf/airframes/UoM/sections/Skywalker_IMU.xml" />
+<include href="conf/airframes/UoM/sections/Skywalker_Misc.xml" />
+<include href="conf/airframes/UoM/sections/Skywalker_Failsafe.xml" />
+<include href="conf/airframes/UoM/sections/Skywalker_Servos.xml" />
+<include href="conf/airframes/UoM/sections/Skywalker_Bat.xml" />
+<include href="conf/airframes/UoM/sections/Skywalker_Commands.xml" />
+<include href="conf/airframes/UoM/sections/Skywalker_Command_Laws.xml" />
+<include href="conf/airframes/UoM/sections/Skywalker_RC_Commands.xml" />
+<include href="conf/airframes/UoM/sections/Skywalker_Modules.xml" />
+<include href="conf/airframes/UoM/sections/Skywalker_AUTO1.xml" />
 
 <section name="VERTICAL CONTROL" prefix="V_CTL_">
 
@@ -71,6 +81,11 @@
     <define name="NAV_PITCH" value="0."/>
     <define name="NAV_GLIDE_PITCH_TRIM" value="0"/>
   </section>
+
+	<section name="INS" prefix="INS_">
+		<define name="ROLL_NEUTRAL_DEFAULT" value="-0.0640000030398" unit="rad"/>
+		<define name="PITCH_NEUTRAL_DEFAULT" value="0.0670000016689" unit="rad"/>
+	</section>
 
   <section name="AGGRESSIVE" prefix="AGR_">
     <define name="BLEND_START" value="20"/><!-- Altitude Error to Initiate Aggressive Climb CANNOT BE ZERO!!-->
