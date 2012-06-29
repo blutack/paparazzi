@@ -1,0 +1,62 @@
+<conf>
+  <aircraft
+   name="UoM_Biker"
+   ac_id="4"
+   airframe="airframes/UoM/Skywalker_Biker.xml"
+   radio="radios/FrSky_TFR4.xml"
+   telemetry="telemetry/default_fixedwing.xml"
+   flight_plan="flight_plans/UoM_Equador_2012/houghend_basic.xml"
+   settings=" settings/fixedwing_basic.xml settings/control/ctl_adaptive.xml"
+   gui_color="#36a23acd97d1"
+  />
+  <aircraft
+   name="UoM_Builder"
+   ac_id="1"
+   airframe="airframes/UoM/Skywalker.xml"
+   radio="radios/FrSky_TFR4.xml"
+   telemetry="telemetry/default_fixedwing.xml"
+   flight_plan="flight_plans/UoM_Equador_2012/houghend_basic.xml"
+   settings=" settings/fixedwing_basic.xml settings/control/ctl_adaptive.xml"
+   gui_color="#36a23acd97d1"
+  />
+  <aircraft
+   name="UoM_Cowboy"
+   ac_id="2"
+   airframe="airframes/UoM/Skywalker_Biker.xml"
+   radio="radios/FrSky_TFR4.xml"
+   telemetry="telemetry/default_fixedwing.xml"
+   flight_plan="flight_plans/UoM_Equador_2012/houghend_basic.xml"
+   settings=" settings/fixedwing_basic.xml settings/control/ctl_adaptive.xml"
+   gui_color="#36a23acd97d1"
+  />
+  <aircraft
+   name="UoM_Indian"
+   ac_id="3"
+   airframe="airframes/UoM/Skywalker.xml"
+   radio="radios/FrSky_TFR4.xml"
+   telemetry="telemetry/default_fixedwing.xml"
+   flight_plan="flight_plans/UoM_Equador_2012/houghend_basic.xml"
+   settings=" settings/fixedwing_basic.xml settings/control/ctl_adaptive.xml"
+   gui_color="#36a23acd97d1"
+  />
+  <aircraft
+   name="UoM_Sailor"
+   ac_id="5"
+   airframe="airframes/UoM/Skywalker.xml"
+   radio="radios/FrSky_TFR4.xml"
+   telemetry="telemetry/default_fixedwing.xml"
+   flight_plan="flight_plans/UoM_Equador_2012/houghend_basic.xml"
+   settings=" settings/fixedwing_basic.xml settings/control/ctl_adaptive.xml"
+   gui_color="#36a23acd97d1"
+  />
+  <aircraft
+   name="UoM_Swift"
+   ac_id="6"
+   airframe="airframes/UoM/Mini-Swift.xml"
+   radio="radios/FrSky_TFR4.xml"
+   telemetry="telemetry/default_fixedwing.xml"
+   flight_plan="flight_plans/UoM_Equador_2012/basic.xml"
+   settings=" settings/fixedwing_basic.xml"
+   gui_color="blue"
+  />
+</conf>
