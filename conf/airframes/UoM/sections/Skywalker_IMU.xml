@@ -1,0 +1,36 @@
+<section name="IMU" prefix="IMU_">
+  <define name="GYRO_P_SIGN" value="1"/>
+  <define name="GYRO_Q_SIGN" value="-1"/>
+  <define name="GYRO_R_SIGN" value="-1"/>
+
+  <!-- Calibration Neutral -->
+  <define name="GYRO_P_NEUTRAL" value="-53"/>
+  <define name="GYRO_Q_NEUTRAL" value="33"/>
+  <define name="GYRO_R_NEUTRAL" value="-16"/>
+
+  <!-- SENS ITG3200  1/14.375 (deg/s)/LSB, rate frac 12bit => 1/14.375 * pi / 180 * 2^12 -->
+  <define name="GYRO_P_SENS" value="4.97312" integer="16"/>
+  <define name="GYRO_Q_SENS" value="4.97312" integer="16"/>
+  <define name="GYRO_R_SENS" value="4.97312" integer="16"/>
+
+  <define name="ACCEL_X_SIGN" value="1"/>
+  <define name="ACCEL_Y_SIGN" value="-1"/>
+  <define name="ACCEL_Z_SIGN" value="-1"/>
+
+  <define name="ACCEL_X_NEUTRAL" value="-2"/>
+  <define name="ACCEL_Y_NEUTRAL" value="1"/>
+  <define name="ACCEL_Z_NEUTRAL" value="-43"/>
+
+  <define name="ACCEL_X_SENS" value="38.9923420841" integer="16"/>
+  <define name="ACCEL_Y_SENS" value="39.2011913001" integer="16"/>
+  <define name="ACCEL_Z_SENS" value="39.4148057033" integer="16"/>
+
+  <!-- Just to compile -->
+  <define name="MAG_X_NEUTRAL" value="0"/>
+  <define name="MAG_Y_NEUTRAL" value="0"/>
+  <define name="MAG_Z_NEUTRAL" value="0"/>
+
+  <define name="BODY_TO_IMU_PHI" value="0"/>
+  <define name="BODY_TO_IMU_THETA" value="0"/>
+  <define name="BODY_TO_IMU_PSI" value="0"/>
+</section>

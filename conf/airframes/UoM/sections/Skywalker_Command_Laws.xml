@@ -1,0 +1,7 @@
+<command_laws>
+  <set servo="MOTOR" value="@THROTTLE"/>
+  <set servo="AILERON" value="@ROLL"/>
+  <set servo="ELEVATOR" value="@PITCH"/>
+  <set servo="RUDDER" value="@YAW"/>
+</command_laws>
+

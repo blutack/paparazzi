@@ -1,0 +1,4 @@
+<section name="AUTO1" prefix="AUTO1_">
+  <define name="MAX_ROLL" value="0.85"/>
+  <define name="MAX_PITCH" value="0.6"/>
+</section>

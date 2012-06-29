@@ -1,0 +1,6 @@
+<servos>
+  <servo name="MOTOR" no="2" min="1000" neutral="1000" max="2000"/>
+  <servo name="AILERON" no="0" min="1000" neutral="1500" max="2000"/>
+  <servo name="ELEVATOR" no="1" min="1800" neutral="1500" max="1200"/>
+  <servo name="RUDDER" no="6" min="1000" neutral="1500" max="2000"/>
+</servos>
