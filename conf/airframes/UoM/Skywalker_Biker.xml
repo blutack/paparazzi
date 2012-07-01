@@ -16,7 +16,46 @@
 	</notes>
   </description>
 
-<include href="conf/airframes/UoM/sections/Skywalker_Firmware.xml" />
+	<firmware name="fixedwing">
+		<define name="AGR_CLIMB"/>
+		<define name="ALT_KALMAN"/>
+		<define name="LOITER_TRIM"/>
+		<!--define name="PITCH_TRIM"/-->
+
+		<target name="sim" board="pc"/>
+		<target name="ap" board="umarim_1.0">
+		  <configure name="FLASH_MODE" value="IAP"/>
+		  <define name="USE_I2C0"/>
+		  <define name="USE_I2C1"/>
+		</target>
+
+		<subsystem name="radio_control" type="ppm"/>
+
+		<!-- Communication -->
+		<!--<subsystem name="telemetry" type="transparent">
+		  <configure name="MODEM_BAUD" value="B57600"/>
+		</subsystem>-->
+		<subsystem name="telemetry" type="transparent_usb"/>
+
+
+		<!-- Actuators are automatically chosen according to board-->
+		<subsystem name="imu"     type="umarim"/>
+		<subsystem name="ahrs"    type="float_dcm">
+		  <define name="USE_HIGH_ACCEL_FLAG"/>
+		</subsystem>
+		<subsystem name="control" type="adaptive"/>
+		<subsystem name="navigation"/>
+		<!-- Sensors -->
+		<subsystem name="gps" type="ublox"/>
+
+		<define name="USE_ADC"/>
+	 	<define name="USE_ADC_3"/> 
+
+		<configure name="AHRS_ALIGNER_LED" value="1"/>
+		<configure name="GPS_LED" value="2"/>
+
+	</firmware>
+
 <include href="conf/airframes/UoM/sections/Skywalker_IMU.xml" />
 <include href="conf/airframes/UoM/sections/Skywalker_Misc.xml" />
 <include href="conf/airframes/UoM/sections/Skywalker_Failsafe.xml" />
