@@ -1,5 +1,7 @@
+<airframe>
 <modules>
   <load name="gps_ubx_ucenter.xml" />	
   <load name="baro_board.xml" />
   <!--<load name="digital_cam.xml" /> -->
 </modules>
+</airframe>

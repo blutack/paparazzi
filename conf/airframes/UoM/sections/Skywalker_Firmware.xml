@@ -1,3 +1,4 @@
+<airframe>
 <firmware name="fixedwing">
   <define name="AGR_CLIMB"/>
   <define name="ALT_KALMAN"/>
@@ -37,3 +38,4 @@
   <configure name="GPS_LED" value="2"/>
 
 </firmware>
+</airframe>

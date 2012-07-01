@@ -1,6 +1,8 @@
+<airframe>
 <rc_commands>
   <set command="THROTTLE" value="@THROTTLE"/>
   <set command="ROLL" value="@ROLL"/>
   <set command="PITCH" value="@PITCH"/>
   <set command="YAW" value="@YAW"/>
 </rc_commands>
+</airframe>

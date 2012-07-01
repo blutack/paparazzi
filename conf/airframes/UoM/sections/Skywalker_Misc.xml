@@ -1,3 +1,4 @@
+<airframe>
 <section name="MISC">
   <define name="MINIMUM_AIRSPEED" value="5." unit="m/s"/>
   <define name="NOMINAL_AIRSPEED" value="10." unit="m/s"/>
@@ -9,3 +10,4 @@
   <define name="UNLOCKED_HOME_MODE" value="TRUE"/>
   <define name="TELEMETRY_MODE_AP" value="1"/>
 </section>
+</airframe>
