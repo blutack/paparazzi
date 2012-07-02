@@ -19,6 +19,7 @@
   <modules>
     <load name="gps_ubx_ucenter.xml" />	
     <load name="baro_board.xml" />
+		<load name="xbee_resetter.xml" />
     <!--<load name="digital_cam.xml" /> -->
   </modules>
 
@@ -31,17 +32,17 @@
     <target name="sim" board="pc"/>
     <target name="ap" board="umarim_1.0">
       <configure name="FLASH_MODE" value="IAP"/>
-      <define name="USE_I2C0"/>
-      <define name="USE_I2C1"/>
+      <!-- <define name="USE_I2C0"/> -->
+			<!-- <define name="USE_I2C1"/> -->
     </target>
 
     <subsystem name="radio_control" type="ppm"/>
 
     <!-- Communication -->
-    <!--<subsystem name="telemetry" type="transparent">
+    <subsystem name="telemetry" type="transparent">
       <configure name="MODEM_BAUD" value="B57600"/>
-    </subsystem>-->
-		<subsystem name="telemetry" type="transparent_usb"/>
+    </subsystem>
+		<!--<subsystem name="telemetry" type="transparent_usb"/>-->
 
 
     <!-- Actuators are automatically chosen according to board-->
@@ -60,6 +61,8 @@
 		<configure name="AHRS_ALIGNER_LED" value="1"/>
     <configure name="GPS_LED" value="2"/>
 
+		<define name="LED_9_BANK" value="0" />
+		<define name="LED_9_PIN" value="15"/>
   </firmware>
 
   <!-- commands section -->

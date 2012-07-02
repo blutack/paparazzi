@@ -11,8 +11,8 @@
   />
   <aircraft
    name="UoM_Builder"
-   ac_id="1"
-   airframe="airframes/UoM/Skywalker.xml"
+   ac_id="66"
+   airframe="airframes/UoM/Skywalker_Builder.xml"
    radio="radios/FrSky_TFR4.xml"
    telemetry="telemetry/default_fixedwing.xml"
    flight_plan="flight_plans/UoM_Equador_2012/houghend_basic.xml"
@@ -57,6 +57,16 @@
    telemetry="telemetry/default_fixedwing.xml"
    flight_plan="flight_plans/UoM_Equador_2012/basic.xml"
    settings=" settings/fixedwing_basic.xml"
+   gui_color="blue"
+  />
+  <aircraft
+   name="UoM_Test_Umarim"
+   ac_id="7"
+   airframe="airframes/UoM/Umarim_test.xml"
+   radio="radios/FrSky_TFR4.xml"
+   telemetry="telemetry/default_fixedwing.xml"
+   flight_plan="flight_plans/basic.xml"
+   settings=" settings/fixedwing_basic.xml settings/control/ctl_adaptive.xml"
    gui_color="blue"
   />
 </conf>

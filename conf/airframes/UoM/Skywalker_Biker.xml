@@ -54,6 +54,8 @@
 		<configure name="AHRS_ALIGNER_LED" value="1"/>
 		<configure name="GPS_LED" value="2"/>
 
+		<define name="LED_9_BANK" value="0" />
+		<define name="LED_9_PIN" value="15"/>
 	</firmware>
 
 <include href="conf/airframes/UoM/sections/Skywalker_IMU.xml" />
