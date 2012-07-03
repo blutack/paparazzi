@@ -104,6 +104,7 @@ static inline void on_gps_solution( void );
 
 
 bool_t power_switch;
+bool_t disable_telemetry = FALSE; // from datalink.h
 
 // what version is this ????
 static const uint16_t version = 1;
@@ -451,7 +452,10 @@ void navigation_task( void ) {
 #endif
 
 #ifndef PERIOD_NAVIGATION_0 // If not sent periodically (in default 0 mode)
-  SEND_NAVIGATION(DefaultChannel, DefaultDevice);
+ 		#ifdef ALLOW_TELEMETRY_DISABLE
+		if(!disable_telemetry)
+		#endif
+			SEND_NAVIGATION(DefaultChannel, DefaultDevice);
 #endif
 
   SEND_CAM(DefaultChannel, DefaultDevice);
@@ -571,6 +575,9 @@ void monitor_task( void ) {
     estimator_flight_time = 1;
     launch = TRUE; /* Not set in non auto launch */
     uint16_t time_sec = sys_time.nb_sec;
+#ifdef ALLOW_TELEMETRY_DISABLE
+		if(!disable_telemetry)
+#endif
     DOWNLINK_SEND_TAKEOFF(DefaultChannel, DefaultDevice, &time_sec);
   }
 
