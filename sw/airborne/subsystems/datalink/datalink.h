@@ -51,6 +51,8 @@
 EXTERN bool_t dl_msg_available;
 /** Flag provided to control calls to ::dl_parse_msg. NOT used in this module*/
 
+EXTERN bool_t disable_telemetry;
+
 EXTERN uint16_t datalink_time;
 
 #define MSG_SIZE 128
