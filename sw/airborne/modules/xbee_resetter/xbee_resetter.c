@@ -5,6 +5,7 @@
 #include "subsystems/datalink/transport.h"
 #include "mcu_periph/uart.h"
 #include "print.h"
+#include "firmwares/fixedwing/autopilot.h"
 
 #ifndef DOWNLINK_DEVICE
 #define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE
@@ -22,9 +23,9 @@ void init_xbee_resetter(void) {
 
 void periodic_1Hz_xbee_resetter(void) {
 	xbee_reset_ticks += 1;
-
 	if(xbee_reset_ticks >= XBEE_RESETTER_RESET_PERIOD) {
-		reset_string();
+		//reset_string();
+		disable_telemetry = TRUE;
 		xbee_reset_ticks = 0;
 	}
 }
