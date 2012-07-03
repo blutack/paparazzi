@@ -9,6 +9,10 @@
 #define DOWNLINK_DEVICE DOWNLINK_AP_DEVICE
 #endif
 
+#ifndef ALLOW_TELEMETRY_DISABLE
+#error "XBee resetter module requires <define name="ALLOW_TELEMETRY_DISABLE" />"
+#endif
+
 #pragma message "Using XBee reboot module - only for 868MHz modules"
 
 uint16_t xbee_reset_ticks;
