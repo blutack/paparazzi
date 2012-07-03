@@ -39,10 +39,10 @@
     <subsystem name="radio_control" type="ppm"/>
 
     <!-- Communication -->
-    <subsystem name="telemetry" type="transparent">
+    <!--<subsystem name="telemetry" type="transparent">
       <configure name="MODEM_BAUD" value="B57600"/>
-    </subsystem>
-		<!--<subsystem name="telemetry" type="transparent_usb"/>-->
+    </subsystem>-->
+		<subsystem name="telemetry" type="transparent_usb"/>
 
 
     <!-- Actuators are automatically chosen according to board-->
@@ -61,9 +61,6 @@
 
 		<configure name="AHRS_ALIGNER_LED" value="1"/>
     <configure name="GPS_LED" value="2"/>
-
-		<define name="LED_9_BANK" value="0" />
-		<define name="LED_9_PIN" value="15"/>
   </firmware>
 
   <!-- commands section -->
