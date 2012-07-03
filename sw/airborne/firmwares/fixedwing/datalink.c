@@ -70,6 +70,9 @@
 #define IdOfMsg(x) (x[1])
 
 void dl_parse_msg(void) {
+	#ifdef ALLOW_TELEMETRY_DISABLE
+	if(disable_telemetry) {return;}
+	#endif
   datalink_time = 0;
   uint8_t msg_id = IdOfMsg(dl_buffer);
 #if 0 // not ready yet
