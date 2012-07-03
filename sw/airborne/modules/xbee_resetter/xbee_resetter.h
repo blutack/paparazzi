@@ -11,13 +11,14 @@
 #endif
 
 #ifndef XBEE_RESETTER_RESET_PERIOD
-#define XBEE_RESETTER_RESET_PERIOD 20
+#define XBEE_RESETTER_RESET_PERIOD 30
 #endif
 
 void init_xbee_resetter(void);
 void periodic_1Hz_xbee_resetter(void);
 void start_xbee_resetter(void);
 void stop_xbee_resetter(void);
-void reset_string(void);
+void stop_telemetry(void);
+void start_telemetry(void);
 
 #endif

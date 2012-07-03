@@ -1,12 +1,8 @@
 #include "xbee_resetter.h"
-#include "led.h"
 #include "subsystems/datalink/downlink.h"
 #include "subsystems/datalink/datalink.h"
-#include "mcu_periph/sys_time.h"
 #include "subsystems/datalink/transport.h"
-#include "mcu_periph/uart.h"
 #include "print.h"
-#include "firmwares/fixedwing/autopilot.h"
 #include "generated/periodic_telemetry.h"
 
 #ifndef DOWNLINK_DEVICE
@@ -17,33 +13,54 @@
 
 uint16_t xbee_reset_ticks;
 uint8_t telemetry_mode_Ap;
-bool_t dl_msg_available;
+uint8_t telemetry_mode_Fbw;
+
+uint8_t old_telemetry_mode_Ap;
+uint8_t old_telemetry_mode_Fbw;
+bool_t disable_telemetry;
 
 void init_xbee_resetter(void) {
-  LED_INIT(XBEE_RESETTER_LED);
-  LED_OFF(XBEE_RESETTER_LED);
 	xbee_reset_ticks = 0;
-	dl_msg_available = TRUE;
 }
 
 void periodic_1Hz_xbee_resetter(void) {
 	xbee_reset_ticks += 1;
-	if(xbee_reset_ticks >= XBEE_RESETTER_RESET_PERIOD) {
-		//reset_string();
-		//disable_telemetry = TRUE;
-		telemetry_mode_Ap = TELEMETRY_MODE_Ap_blank;
-		telemetry_mode_Fbw = TELEMETRY_MODE_Fbw_blank;
-		dl_msg_available = FALSE;
-		xbee_reset_ticks = 0;
+
+	switch(xbee_reset_ticks) {
+		case XBEE_RESETTER_RESET_PERIOD:
+			stop_telemetry();
+			break;
+
+		case XBEE_RESETTER_RESET_PERIOD + 1:
+			TransportLink(DOWNLINK_DEVICE, PrintString("+++"));
+			break;
+
+		case XBEE_RESETTER_RESET_PERIOD + 2:
+			TransportLink(DOWNLINK_DEVICE, PrintString("ATFR\r\n"));
+			break;
+
+		case XBEE_RESETTER_RESET_PERIOD + 3:
+			start_telemetry();
+			xbee_reset_ticks = 0;
+			break;
 	}
 }
 
-void reset_string(void) {
-	sys_time_usleep(1000000);
-	TransportLink(DOWNLINK_DEVICE, PrintString("+++"));
-	sys_time_usleep(1100000);
-	TransportLink(DOWNLINK_DEVICE, PrintString("ATFR\r\n"));
-	sys_time_usleep(10000);
+void stop_telemetry(void) {
+		disable_telemetry = TRUE;
+
+		old_telemetry_mode_Ap = telemetry_mode_Ap;
+		old_telemetry_mode_Fbw = telemetry_mode_Fbw;
+
+		telemetry_mode_Ap = TELEMETRY_MODE_Ap_blank;
+		telemetry_mode_Fbw = TELEMETRY_MODE_Fbw_blank;
+}
+
+void start_telemetry(void) {
+		disable_telemetry = FALSE;
+
+		telemetry_mode_Ap = old_telemetry_mode_Ap;
+		telemetry_mode_Fbw = old_telemetry_mode_Fbw;
 }
 
 void start_xbee_resetter(void) {
