@@ -11,7 +11,7 @@
 #endif
 
 #ifndef XBEE_RESETTER_RESET_PERIOD
-#define XBEE_RESETTER_RESET_PERIOD 300
+#define XBEE_RESETTER_RESET_PERIOD 20
 #endif
 
 void init_xbee_resetter(void);
