@@ -55,6 +55,7 @@
     <!-- Sensors -->
     <subsystem name="gps" type="ublox"/>
 
+		<define name="ALLOW_TELEMETRY_DISABLE" />
 		<define name="USE_ADC"/>
    	<define name="USE_ADC_3"/> 
 
