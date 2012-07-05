@@ -1,22 +1,22 @@
 <!DOCTYPE flight_plan SYSTEM "../flight_plan.dtd">
 
-<flight_plan alt="50" ground_alt="0" lat0="53.435634" lon0="-2.250406" max_dist_from_home="3000" name="Basic" security_height="25">
-  <!--<header>
+<flight_plan alt="60" ground_alt="30" lat0="53.435634" lon0="-2.250406" max_dist_from_home="2000" name="Basic" security_height="30">
+<header>
 #include "subsystems/navigation/nav_line.h"
-#include "subsystems/datalink/datalink.h"
+//#include "subsystems/datalink/datalink.h"
 
 
-#ifdef DC_AUTOSHOOT_QUARTERSEC_PERIOD
+//#ifdef DC_AUTOSHOOT_QUARTERSEC_PERIOD
  
-#include "modules/digital_cam/dc.h"
+//#include "modules/digital_cam/dc.h"
  
-#define LINE_START_FUNCTION dc_autoshoot = DC_AUTOSHOOT_PERIODIC;
+//#define LINE_START_FUNCTION dc_autoshoot = DC_AUTOSHOOT_PERIODIC;
 //#define LINE_START_FUNCTION dc_Survey(dc_gps_dist);
-#define LINE_STOP_FUNCTION dc_autoshoot = DC_AUTOSHOOT_STOP;
+//#define LINE_STOP_FUNCTION dc_autoshoot = DC_AUTOSHOOT_STOP;
  
-#endif
+//#endif
 
-</header>-->
+</header>
   <waypoints>
     <waypoint name="HOME" x="0" y="0"/>
     <waypoint name="STDBY" x="49.5" y="100.1"/>
