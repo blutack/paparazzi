@@ -7,7 +7,7 @@
 #define XBEE_RESETTER_MODULE_H
 
 #ifndef XBEE_RESETTER_RESET_PERIOD
-#define XBEE_RESETTER_RESET_PERIOD 30
+#define XBEE_RESETTER_RESET_PERIOD 300
 #endif
 
 void init_xbee_resetter(void);
