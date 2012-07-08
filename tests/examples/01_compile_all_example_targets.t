@@ -27,9 +27,6 @@ foreach my $example (sort keys%{$examples->{'aircraft'}})
 			{
 				next unless scalar $airframe_config->{'firmware'}->{$process}->{'target'}->{$target}->{'board'};
 
-				# Exclude some builds on Mac as they are currently broken.
-				next if ( ($Config{'osname'} =~ m#darwin#i) and ($example =~ m#LISA_ASCTEC_PIOTR|LisaLv11_Booz2v12_RC|BOOZ2_A1|LisaLv11_Aspirinv15_Overo_RCi|Quad_LisaM|Booz2#i) and ($target =~ m#sim|nps#i) );
-
 				#warn "EXAMPLE: [$example] TARGET: [$target]\n";
 				my $make_options = "AIRCRAFT=$example clean_ac $target.compile";
 				my $output = run_program(
@@ -46,9 +43,6 @@ foreach my $example (sort keys%{$examples->{'aircraft'}})
 			foreach my $target (sort keys %{$airframe_config->{'firmware'}->{$process}})
 			{
 				next unless scalar $airframe_config->{'firmware'}->{$process}->{$target}->{'board'};
-
-				# Exclude some builds on Mac as they are currently broken.
-				next if ( ($Config{'osname'} =~ m#darwin#i) and ($example =~ m#LISA_ASCTEC_PIOTR|LisaLv11_Booz2v12_RC|BOOZ2_A1|LisaLv11_Aspirinv15_Overo_RC|Quad_LisaM|Booz2#i) and ($target =~ m#sim|nps#i) );
 
 				#warn "EXAMPLET: [$example] TARGET: [$target]\n";
 				my $make_options = "AIRCRAFT=$example clean_ac $target.compile";
@@ -97,7 +91,7 @@ sub run_program
         {
                 if ($dont_fail_on_error)
                 {
-                        warn "Error: The command \"". $prog->last_command() ."\" failed to complete successfully. Exit status: $exit_status\n" if $verbose;
+                        warn "Error: The command \"". $prog->last_command() ."\" failed to complete successfully. Exit status: $exit_status\n";
                 }
                 else
                 {
