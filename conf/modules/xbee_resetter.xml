@@ -9,7 +9,7 @@
   </header>
   <init fun="init_xbee_resetter()"/>
   <periodic fun="periodic_1Hz_xbee_resetter()" freq="1." start="start_xbee_resetter()" stop="stop_xbee_resetter()" autorun="TRUE"/>
-	<makefile>
+	<makefile target="ap" >
     <file name="xbee_resetter.c"/>
   </makefile>
 </module>
